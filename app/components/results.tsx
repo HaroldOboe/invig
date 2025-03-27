@@ -27,7 +27,8 @@ export default function IndexPage() {
       )}
       {!subject && !subjNum && !duration && (
         <p className="text-2xl text-gray-500">
-          No form data submitted yet. Visit /admin to input data.
+          No form data submitted yet. <br />
+          Visit /admin to input data.
         </p>
       )}
     </div>
