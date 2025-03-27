@@ -1,20 +1,27 @@
+import { Suspense } from "react";
 import Clock from "../components/clock";
 import IndexPage from "../components/results";
 
 export default function Home() {
   return (
-    <div className="h-screen w-screen bg-gray-100 flex flex-col lg:flex-row items-center justify-center p-8 space-y-10 lg:space-y-0 lg:space-x-16 overflow-hidden fixed top-0 left-0">
+    <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row items-center justify-center p-6 space-y-8 lg:space-y-0 lg:space-x-8">
       {/* Clock Section */}
-      <div className="flex items-center justify-center w-full max-w-2xl lg:w-1/2">
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg">
         <Clock />
       </div>
 
       {/* Results Section */}
-      <div className="w-full max-w-md bg-white rounded-xl shadow-xl p-10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+      <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4 text-center">
           Form Results
         </h2>
-        <IndexPage />
+        <Suspense
+          fallback={
+            <p className="text-center text-gray-500">Loading results...</p>
+          }
+        >
+          <IndexPage />
+        </Suspense>
       </div>
     </div>
   );
