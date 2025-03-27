@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 
-export default function IndexPage(): JSX.Element {
+export default function IndexPage() {
   const searchParams = useSearchParams();
   const subject = searchParams?.get("subject");
   const subjNum = searchParams.get("subjNum");
