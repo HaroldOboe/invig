@@ -12,9 +12,6 @@ export default function Home() {
 
       {/* Results Section */}
       <div className="w-full max-w-md bg-white rounded-xl shadow-xl p-10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-          Form Results
-        </h2>
         <Suspense
           fallback={
             <p className="text-center text-gray-500">Loading results...</p>
